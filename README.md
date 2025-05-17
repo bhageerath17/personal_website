@@ -28,6 +28,28 @@ You can deploy this static site using **Google Cloud Storage**.
 
 For more advanced hosting (e.g., using a custom domain or HTTPS), see the [Google Cloud documentation](https://cloud.google.com/storage/docs/hosting-static-website).
 
+### Continuous deployment from Git
+
+If you want changes pushed to this repository to automatically update your Google Cloud Storage bucket, set up a **Cloud Build** trigger:
+
+1. Push this repository to GitHub or Google Cloud Source Repositories.
+2. In the Google Cloud console, open **Cloud Build** → **Triggers** and create a trigger bound to the `main` branch.
+3. Add a `cloudbuild.yaml` file to this repo containing:
+
+```yaml
+steps:
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: bash
+    args:
+      - -c
+      - |
+          gsutil rsync -r src gs://YOUR_BUCKET_NAME
+```
+
+Every push to `main` will run this build and sync the `src` folder to your bucket.
+
+To use your domain `bogibee.com`, map it to the bucket following the [custom domain guide](https://cloud.google.com/storage/docs/hosting-static-website#custom-domains) and update your DNS records.
+
 ## Personalization
 
 Replace the placeholder text in `app.js` with information from your resume. Each `Section` component corresponds to a section of your website: education, employment, and other interests.
