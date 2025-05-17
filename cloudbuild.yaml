@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  entrypoint: bash
+  args:
+  - -c
+  - |
+      gsutil rsync -r src gs://YOUR_BUCKET_NAME
