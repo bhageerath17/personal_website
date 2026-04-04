@@ -288,14 +288,15 @@ strong { color: #fff; }
   gap: 8px;
 }
 .exp-photo-img {
-  width: 170px;
-  border-radius: 12px;
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  border-radius: 18px;
   object-fit: cover;
   object-position: top center;
-  border: 1px solid rgba(34,211,238,0.2);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  border: 2px solid rgba(34,211,238,0.25);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55), 0 0 0 6px rgba(34,211,238,0.06);
   display: block;
-  transition: transform 0.3s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .exp-photo-img:hover { transform: scale(1.03); }
 .exp-photo-caption {
@@ -763,7 +764,7 @@ strong { color: #fff; }
 
   /* Ford photo */
   .exp-card-layout { flex-direction: column; }
-  .exp-photo-img { width: 100%; max-width: 260px; }
+  .exp-photo-img { width: 100%; max-width: 200px; }
 
   /* Impact 2-col */
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
