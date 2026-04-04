@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Studies — Bhageerath Bogi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .cs-hero {
+      min-height: 38vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: calc(var(--nav-h) + 48px) 24px 48px;
+      position: relative; overflow: hidden;
+    }
+    .cs-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 60%),
+                  radial-gradient(ellipse 50% 40% at 80% 70%, rgba(167,139,250,0.07) 0%, transparent 50%);
+    }
+    .cs-hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .cs-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.04em; text-transform: uppercase;
+      margin-bottom: 28px;
+      transition: color 0.2s;
+    }
+    .cs-back:hover { color: var(--cyan); }
+    .cs-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 800; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 30%, var(--blue) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+    }
+    .cs-sub {
+      font-size: 1rem; color: var(--subtle); max-width: 520px; margin: 0 auto 32px;
+    }
+    .cs-iframe-wrap {
+      width: 100%; max-width: 1100px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+      background: var(--card);
+      position: relative;
+    }
+    .cs-iframe-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 16px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .cs-iframe-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+    }
+    .cs-iframe-url {
+      flex: 1; font-size: 0.75rem; font-family: var(--mono);
+      color: var(--muted); background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border); border-radius: 6px;
+      padding: 4px 10px;
+    }
+    .cs-iframe-open {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 600; color: var(--cyan);
+      padding: 4px 12px; border-radius: 6px;
+      background: rgba(34,211,238,0.08);
+      border: 1px solid rgba(34,211,238,0.2);
+      transition: background 0.2s;
+      flex-shrink: 0;
+    }
+    .cs-iframe-open:hover { background: rgba(34,211,238,0.18); }
+    iframe.cs-frame {
+      width: 100%; height: 78vh;
+      border: none; display: block;
+    }
+    .cs-fallback {
+      display: none;
+      padding: 64px 24px; text-align: center;
+    }
+    .cs-fallback p { color: var(--subtle); margin-bottom: 24px; }
+    .cs-section { padding: 48px 24px 96px; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">BB</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#impact">Impact</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="case-studies.html" style="color:#fff">Case Studies</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <div class="cs-hero-bg"></div>
+    <div class="cs-hero-content">
+      <a href="index.html" class="cs-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+      <h1 class="cs-title">Case Studies</h1>
+      <p class="cs-sub">Deep dives into production ML systems, GenAI platforms, and data-driven solutions built across fraud, retail, and engineering.</p>
+    </div>
+  </div>
+
+  <!-- EMBEDDED CASE STUDIES -->
+  <section class="cs-section">
+    <div class="container">
+      <div class="cs-iframe-wrap">
+        <div class="cs-iframe-bar">
+          <span class="cs-iframe-dot" style="background:#ff5f57"></span>
+          <span class="cs-iframe-dot" style="background:#ffbd2e"></span>
+          <span class="cs-iframe-dot" style="background:#28c840"></span>
+          <span class="cs-iframe-url">https://bhageerath17.github.io/polygon/</span>
+          <a href="https://bhageerath17.github.io/polygon/" target="_blank" rel="noopener" class="cs-iframe-open">
+            <i class="fas fa-arrow-up-right-from-square"></i> Open
+          </a>
+        </div>
+        <iframe
+          class="cs-frame"
+          src="https://bhageerath17.github.io/polygon/"
+          title="Case Studies — Polygon"
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Bhageerath Bogi · <a href="index.html" style="color:var(--cyan)">Back to Portfolio</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  </script>
+</body>
+</html>
