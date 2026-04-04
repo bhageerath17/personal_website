@@ -236,7 +236,10 @@ strong { color: #fff; }
    ABOUT
    ============================================================ */
 .about-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  display: grid;
+  grid-template-columns: 200px 1fr 1fr;
+  gap: 40px;
+  align-items: start;
 }
 .about-text p {
   color: var(--subtle); margin-bottom: 16px; font-size: 1.025rem;
@@ -244,6 +247,83 @@ strong { color: #fff; }
 .about-text p:last-child { margin-bottom: 0; }
 
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
+
+/* About profile photo */
+.about-photo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.about-profile-img {
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 18px;
+  border: 2px solid rgba(34,211,238,0.25);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55), 0 0 0 6px rgba(34,211,238,0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: block;
+}
+.about-profile-img:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 0 6px rgba(34,211,238,0.18);
+}
+
+/* Ford contextual photo */
+.ford-photo {
+  float: right;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 12px;
+  border: 1px solid rgba(34,211,238,0.2);
+  margin: 0 0 14px 20px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+.ford-photo:hover { transform: scale(1.04); }
+
+/* Lifestyle gallery strip */
+.section-gallery {
+  padding: 0 24px 80px;
+}
+.gallery-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 680px;
+  margin: 0 auto;
+}
+.gallery-item {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 36px rgba(0,0,0,0.45);
+  position: relative;
+  cursor: default;
+}
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-item figcaption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 28px 14px 14px;
+  background: linear-gradient(to top, rgba(7,11,20,0.82) 0%, transparent 100%);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--subtle);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 
 .tag {
   padding: 6px 14px; border-radius: 99px; font-size: 0.82rem; font-weight: 600;
@@ -635,6 +715,14 @@ strong { color: #fff; }
 
   /* About stacked */
   .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-photo { order: -1; }
+  .about-profile-img { width: 160px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; }
+
+  /* Ford photo */
+  .ford-photo { width: 120px; height: 120px; }
+
+  /* Gallery strip */
+  .gallery-strip { max-width: 100%; }
 
   /* Impact 2-col */
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
