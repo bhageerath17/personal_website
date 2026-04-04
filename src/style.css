@@ -236,10 +236,14 @@ strong { color: #fff; }
    ABOUT
    ============================================================ */
 .about-grid {
-  display: grid;
-  grid-template-columns: 200px 1fr 1fr;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.about-top {
+  display: flex;
   gap: 40px;
-  align-items: start;
+  align-items: flex-start;
 }
 .about-text p {
   color: var(--subtle); margin-bottom: 16px; font-size: 1.025rem;
@@ -330,6 +334,21 @@ strong { color: #fff; }
 }
 .contact-content {
   flex: 1;
+}
+.contact-content .section-title {
+  text-align: left;
+  margin-bottom: 12px;
+}
+.contact-content .section-title::after {
+  margin: 12px 0 0;
+}
+.contact-content .contact-sub {
+  text-align: left;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+.contact-content .contact-cards {
+  justify-content: flex-start;
 }
 
 .tag {
@@ -721,12 +740,11 @@ strong { color: #fff; }
   .hamburger { display: flex; }
 
   /* About stacked */
-  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-top { flex-direction: column; gap: 24px; }
 
   /* Contact stacked */
   .contact-layout { flex-direction: column; gap: 28px; }
-  .about-photo { order: -1; }
-  .about-profile-img { width: 160px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; }
+  .about-profile-img { width: 120px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; }
 
   /* Ford photo */
   .ford-photo { width: 120px; height: 120px; }
