@@ -274,20 +274,39 @@ strong { color: #fff; }
   box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 0 6px rgba(34,211,238,0.18);
 }
 
-/* Ford contextual photo */
-.ford-photo {
-  float: right;
-  width: 150px;
-  height: 150px;
+/* Experience card photo+content layout (Ford) */
+.exp-card-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+.exp-card-photo {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.exp-photo-img {
+  width: 170px;
+  border-radius: 12px;
   object-fit: cover;
   object-position: top center;
-  border-radius: 12px;
   border: 1px solid rgba(34,211,238,0.2);
-  margin: 0 0 14px 20px;
   box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  display: block;
   transition: transform 0.3s ease;
 }
-.ford-photo:hover { transform: scale(1.04); }
+.exp-photo-img:hover { transform: scale(1.03); }
+.exp-photo-caption {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-align: center;
+}
+.exp-card-content { flex: 1; }
 
 /* Circle lifestyle photo above Contact */
 .section-circle-photo {
@@ -420,38 +439,27 @@ strong { color: #fff; }
   padding: 20px 0;
 }
 
-/* Central vertical line */
+/* Left vertical line */
 .timeline::before {
   content: '';
   position: absolute;
-  left: 50%;
+  left: 28px;
   top: 0; bottom: 0;
   width: 2px;
-  transform: translateX(-50%);
   background: linear-gradient(to bottom, transparent, var(--cyan) 5%, var(--blue) 50%, var(--purple) 95%, transparent);
 }
 
 .timeline-item {
   position: relative;
-  width: 50%;
+  width: 100%;
+  padding-left: 84px;
   padding-bottom: 56px;
-}
-
-/* Left-side items */
-.timeline-item[data-side="left"] {
-  left: 0;
-  padding-right: 56px;
-}
-
-/* Right-side items */
-.timeline-item[data-side="right"] {
-  left: 50%;
-  padding-left: 56px;
 }
 
 /* Dot on the spine */
 .timeline-dot {
   position: absolute;
+  left: 6px;
   top: 28px;
   width: 44px; height: 44px;
   border-radius: 50%;
@@ -463,11 +471,18 @@ strong { color: #fff; }
   box-shadow: 0 0 16px rgba(34,211,238,0.3);
 }
 
-.timeline-item[data-side="left"] .timeline-dot {
-  right: -22px;
-}
-.timeline-item[data-side="right"] .timeline-dot {
-  left: -22px;
+/* Year label on spine */
+.timeline-year {
+  position: absolute;
+  left: 0;
+  top: 78px;
+  width: 58px;
+  text-align: center;
+  font-size: 0.6rem;
+  font-family: var(--mono);
+  color: var(--muted);
+  line-height: 1.3;
+  letter-spacing: 0.02em;
 }
 
 /* Card */
@@ -747,25 +762,14 @@ strong { color: #fff; }
   .about-profile-img { width: 120px; aspect-ratio: 1; border-radius: 50%; margin: 0 auto; }
 
   /* Ford photo */
-  .ford-photo { width: 120px; height: 120px; }
-
-
+  .exp-card-layout { flex-direction: column; }
+  .exp-photo-img { width: 100%; max-width: 260px; }
 
   /* Impact 2-col */
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
 
-  /* Timeline: full width, single column */
-  .timeline::before { left: 20px; transform: none; }
-  .timeline-item,
-  .timeline-item[data-side="left"],
-  .timeline-item[data-side="right"] {
-    width: 100%; left: 0;
-    padding-left: 60px; padding-right: 0;
-  }
-  .timeline-item[data-side="left"] .timeline-dot,
-  .timeline-item[data-side="right"] .timeline-dot {
-    left: -2px; right: auto;
-  }
+  /* Timeline already left-aligned, just tighten padding */
+  .timeline-item { padding-left: 64px; }
 
   /* Skills 1-col */
   .skills-grid { grid-template-columns: 1fr; }
