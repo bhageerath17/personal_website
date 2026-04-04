@@ -299,6 +299,29 @@ strong { color: #fff; }
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 .exp-photo-img:hover { transform: scale(1.03); }
+
+.ford-card-layout {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+.ford-card-layout .timeline-projects { flex: 1; }
+.ford-photo {
+  flex-shrink: 0;
+  width: 200px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 18px;
+  border: 2px solid rgba(34,211,238,0.25);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55), 0 0 0 6px rgba(34,211,238,0.06);
+  display: block;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.ford-photo:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.65), 0 0 0 6px rgba(34,211,238,0.18);
+}
 .exp-photo-caption {
   font-size: 0.68rem;
   font-weight: 600;
