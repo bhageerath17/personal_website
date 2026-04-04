@@ -9,83 +9,113 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     .cs-hero {
-      min-height: 38vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center;
-      padding: calc(var(--nav-h) + 48px) 24px 48px;
+      min-height: 30vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: calc(var(--nav-h) + 40px) 24px 40px;
       position: relative; overflow: hidden;
     }
     .cs-hero-bg {
       position: absolute; inset: 0; z-index: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 60%),
-                  radial-gradient(ellipse 50% 40% at 80% 70%, rgba(167,139,250,0.07) 0%, transparent 50%);
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 60%);
     }
     .cs-hero-content { position: relative; z-index: 1; max-width: 700px; }
     .cs-back {
       display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.82rem; font-weight: 600; color: var(--muted);
-      letter-spacing: 0.04em; text-transform: uppercase;
-      margin-bottom: 28px;
-      transition: color 0.2s;
+      font-size: 0.78rem; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 20px; transition: color 0.2s;
     }
     .cs-back:hover { color: var(--cyan); }
-    .cs-title {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 800; letter-spacing: -0.03em;
+    .cs-page-title {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.03em;
       background: linear-gradient(135deg, #fff 30%, var(--blue) 100%);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 16px;
+      background-clip: text; margin-bottom: 12px;
     }
-    .cs-sub {
-      font-size: 1rem; color: var(--subtle); max-width: 520px; margin: 0 auto 32px;
+    .cs-page-sub { font-size: 0.95rem; color: var(--subtle); }
+
+    /* CARD GRID */
+    .cs-grid-section { padding: 0 24px 40px; }
+    .cs-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px; max-width: 1100px; margin: 0 auto;
     }
-    .cs-iframe-wrap {
-      width: 100%; max-width: 1100px;
-      margin: 0 auto;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-      background: var(--card);
-      position: relative;
+    .cs-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px;
+      cursor: pointer; transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      position: relative; overflow: hidden;
     }
-    .cs-iframe-bar {
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 16px;
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
+    .cs-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--cyan), var(--blue));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.3s;
     }
-    .cs-iframe-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-    }
-    .cs-iframe-url {
-      flex: 1; font-size: 0.75rem; font-family: var(--mono);
-      color: var(--muted); background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border); border-radius: 6px;
-      padding: 4px 10px;
-    }
-    .cs-iframe-open {
+    .cs-card:hover { border-color: rgba(34,211,238,0.3); box-shadow: 0 8px 40px rgba(0,0,0,0.4); transform: translateY(-3px); }
+    .cs-card:hover::before, .cs-card.active::before { transform: scaleX(1); }
+    .cs-card.active { border-color: rgba(34,211,238,0.5); box-shadow: 0 0 0 2px rgba(34,211,238,0.15); }
+    .cs-card-tag {
       display: inline-flex; align-items: center; gap: 6px;
-      font-size: 0.75rem; font-weight: 600; color: var(--cyan);
-      padding: 4px 12px; border-radius: 6px;
-      background: rgba(34,211,238,0.08);
-      border: 1px solid rgba(34,211,238,0.2);
-      transition: background 0.2s;
-      flex-shrink: 0;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase;
+      color: var(--cyan); background: rgba(34,211,238,0.08);
+      border: 1px solid rgba(34,211,238,0.2); padding: 3px 10px; border-radius: 99px; margin-bottom: 14px;
     }
-    .cs-iframe-open:hover { background: rgba(34,211,238,0.18); }
-    iframe.cs-frame {
-      width: 100%; height: 78vh;
-      border: none; display: block;
+    .cs-card-title { font-size: 1rem; font-weight: 700; color: #fff; line-height: 1.4; margin-bottom: 10px; }
+    .cs-card-desc { font-size: 0.82rem; color: var(--subtle); line-height: 1.65; margin-bottom: 16px; }
+    .cs-card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .cs-card-chips { display: flex; gap: 6px; flex-wrap: wrap; }
+    .cs-card-chip {
+      font-size: 0.68rem; font-weight: 600; font-family: var(--mono);
+      padding: 2px 8px; border-radius: 5px;
+      background: rgba(59,130,246,0.1); color: var(--blue); border: 1px solid rgba(59,130,246,0.2);
     }
-    .cs-fallback {
+    .cs-card-arrow {
+      width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0;
+      background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cyan); font-size: 0.75rem; transition: background 0.2s;
+    }
+    .cs-card:hover .cs-card-arrow { background: rgba(34,211,238,0.18); }
+
+    /* VIEWER */
+    .cs-viewer-section { padding: 0 24px 80px; }
+    .cs-viewer-wrap {
+      max-width: 1100px; margin: 0 auto;
+      border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--border); box-shadow: 0 16px 64px rgba(0,0,0,0.55);
       display: none;
-      padding: 64px 24px; text-align: center;
     }
-    .cs-fallback p { color: var(--subtle); margin-bottom: 24px; }
-    .cs-section { padding: 48px 24px 96px; }
+    .cs-viewer-wrap.visible { display: block; }
+    .cs-viewer-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 16px; background: var(--surface); border-bottom: 1px solid var(--border);
+    }
+    .cs-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .cs-viewer-title-label {
+      flex: 1; font-size: 0.78rem; font-weight: 600; color: var(--subtle);
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .cs-viewer-url {
+      font-size: 0.7rem; font-family: var(--mono); color: var(--muted);
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      border-radius: 5px; padding: 3px 10px; max-width: 240px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .cs-viewer-open {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.72rem; font-weight: 600; color: var(--cyan);
+      padding: 4px 12px; border-radius: 6px;
+      background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2);
+      transition: background 0.2s; flex-shrink: 0;
+    }
+    .cs-viewer-open:hover { background: rgba(34,211,238,0.18); }
+    .cs-iframe { width: 100%; height: 500px; border: none; display: block; }
+
+    @media (max-width: 600px) {
+      .cs-grid { grid-template-columns: 1fr; }
+      .cs-iframe { height: 400px; }
+      .cs-viewer-url { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -114,31 +144,49 @@
     <div class="cs-hero-bg"></div>
     <div class="cs-hero-content">
       <a href="index.html" class="cs-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
-      <h1 class="cs-title">Case Studies</h1>
-      <p class="cs-sub">Deep dives into production ML systems, GenAI platforms, and data-driven solutions built across fraud, retail, and engineering.</p>
+      <h1 class="cs-page-title">Case Studies</h1>
+      <p class="cs-page-sub">Deep dives into production ML systems, GenAI platforms, and data-driven solutions.</p>
     </div>
   </div>
 
-  <!-- EMBEDDED CASE STUDIES -->
-  <section class="cs-section">
-    <div class="container">
-      <div class="cs-iframe-wrap">
-        <div class="cs-iframe-bar">
-          <span class="cs-iframe-dot" style="background:#ff5f57"></span>
-          <span class="cs-iframe-dot" style="background:#ffbd2e"></span>
-          <span class="cs-iframe-dot" style="background:#28c840"></span>
-          <span class="cs-iframe-url">https://bhageerath17.github.io/polygon/</span>
-          <a href="https://bhageerath17.github.io/polygon/" target="_blank" rel="noopener" class="cs-iframe-open">
-            <i class="fas fa-arrow-up-right-from-square"></i> Open
-          </a>
+  <!-- CARD GRID -->
+  <section class="cs-grid-section">
+    <div class="cs-grid">
+
+      <!-- Add more cards here as needed -->
+      <div class="cs-card"
+           data-url="https://bhageerath17.github.io/polygon/"
+           data-title="SPX Reversals Identification using VIX1D and SPX Options Prices">
+        <div class="cs-card-tag"><i class="fas fa-chart-line"></i> Quantitative Finance</div>
+        <div class="cs-card-title">SPX Reversals Identification using VIX1D and SPX Options Prices</div>
+        <div class="cs-card-desc">Statistical analysis of intraday SPX reversal signals derived from real-time VIX1D term structure and SPX options flow, with backtested entry/exit logic.</div>
+        <div class="cs-card-footer">
+          <div class="cs-card-chips">
+            <span class="cs-card-chip">VIX1D</span>
+            <span class="cs-card-chip">SPX Options</span>
+            <span class="cs-card-chip">Python</span>
+          </div>
+          <div class="cs-card-arrow"><i class="fas fa-chevron-down"></i></div>
         </div>
-        <iframe
-          class="cs-frame"
-          src="https://bhageerath17.github.io/polygon/"
-          title="Case Studies — Polygon"
-          loading="lazy"
-        ></iframe>
       </div>
+
+    </div>
+  </section>
+
+  <!-- VIEWER -->
+  <section class="cs-viewer-section">
+    <div class="cs-viewer-wrap" id="csViewer">
+      <div class="cs-viewer-bar">
+        <span class="cs-dot" style="background:#ff5f57"></span>
+        <span class="cs-dot" style="background:#ffbd2e"></span>
+        <span class="cs-dot" style="background:#28c840"></span>
+        <span class="cs-viewer-title-label" id="csViewerTitle"></span>
+        <span class="cs-viewer-url" id="csViewerUrl"></span>
+        <a id="csViewerOpen" href="#" target="_blank" rel="noopener" class="cs-viewer-open">
+          <i class="fas fa-arrow-up-right-from-square"></i> Open
+        </a>
+      </div>
+      <iframe class="cs-iframe" id="csFrame" src="" title="Case Study Viewer" loading="lazy"></iframe>
     </div>
   </section>
 
@@ -156,6 +204,42 @@
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
     hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
     navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const viewer   = document.getElementById('csViewer');
+    const frame    = document.getElementById('csFrame');
+    const titleLbl = document.getElementById('csViewerTitle');
+    const urlLbl   = document.getElementById('csViewerUrl');
+    const openLink = document.getElementById('csViewerOpen');
+
+    document.querySelectorAll('.cs-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const url   = card.dataset.url;
+        const title = card.dataset.title;
+        const arrow = card.querySelector('.cs-card-arrow i');
+        const isActive = card.classList.contains('active');
+
+        // deactivate all
+        document.querySelectorAll('.cs-card').forEach(c => {
+          c.classList.remove('active');
+          c.querySelector('.cs-card-arrow i').className = 'fas fa-chevron-down';
+        });
+
+        if (isActive) {
+          viewer.classList.remove('visible');
+          frame.src = '';
+          return;
+        }
+
+        card.classList.add('active');
+        arrow.className = 'fas fa-chevron-up';
+        frame.src      = url;
+        titleLbl.textContent = title;
+        urlLbl.textContent   = url;
+        openLink.href        = url;
+        viewer.classList.add('visible');
+        setTimeout(() => viewer.scrollIntoView({ behavior: 'smooth', block: 'start' }), 120);
+      });
+    });
   </script>
 </body>
 </html>
