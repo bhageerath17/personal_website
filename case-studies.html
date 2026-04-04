@@ -76,6 +76,14 @@
       color: var(--cyan); font-size: 0.75rem; transition: background 0.2s;
     }
     .cs-card:hover .cs-card-arrow { background: rgba(34,211,238,0.18); }
+    .cs-card.soon { opacity: 0.6; cursor: default; pointer-events: none; }
+    .cs-card.soon::before { display: none; }
+    .cs-soon-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--orange); background: rgba(251,146,60,0.1);
+      border: 1px solid rgba(251,146,60,0.25); padding: 2px 9px; border-radius: 99px;
+    }
 
     /* VIEWER */
     .cs-viewer-section { padding: 0 24px 80px; }
@@ -167,6 +175,51 @@
             <span class="cs-card-chip">Python</span>
           </div>
           <div class="cs-card-arrow"><i class="fas fa-chevron-down"></i></div>
+        </div>
+      </div>
+
+      <!-- Pricing Optimization -->
+      <div class="cs-card soon">
+        <div class="cs-card-tag"><i class="fas fa-tags"></i> Retail &amp; E-Commerce</div>
+        <div class="cs-card-title">Dynamic Pricing Optimisation at Scale</div>
+        <div class="cs-card-desc">Real-time markdown and surge pricing engine using demand elasticity modelling, competitor signals, and inventory constraints across millions of SKUs.</div>
+        <div class="cs-card-footer">
+          <div class="cs-card-chips">
+            <span class="cs-card-chip">Elasticity</span>
+            <span class="cs-card-chip">XGBoost</span>
+            <span class="cs-card-chip">Spark</span>
+          </div>
+          <span class="cs-soon-badge"><i class="fas fa-clock"></i> Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Fraud Detection -->
+      <div class="cs-card soon">
+        <div class="cs-card-tag"><i class="fas fa-shield-halved"></i> FinTech</div>
+        <div class="cs-card-title">Real-Time Fraud Detection &amp; Risk Scoring</div>
+        <div class="cs-card-desc">Sub-100ms transaction scoring pipeline combining graph-based feature engineering, behavioural embeddings, and an ensemble model deployed on streaming infrastructure.</div>
+        <div class="cs-card-footer">
+          <div class="cs-card-chips">
+            <span class="cs-card-chip">GNN</span>
+            <span class="cs-card-chip">Kafka</span>
+            <span class="cs-card-chip">MLflow</span>
+          </div>
+          <span class="cs-soon-badge"><i class="fas fa-clock"></i> Coming Soon</span>
+        </div>
+      </div>
+
+      <!-- Geo Analysis -->
+      <div class="cs-card soon">
+        <div class="cs-card-tag"><i class="fas fa-map-location-dot"></i> Geospatial</div>
+        <div class="cs-card-title">Geo-Spatial Customer &amp; Demand Analysis</div>
+        <div class="cs-card-desc">Geospatial clustering and trade-area modelling to uncover demand hotspots, optimise site selection, and personalise hyper-local marketing campaigns.</div>
+        <div class="cs-card-footer">
+          <div class="cs-card-chips">
+            <span class="cs-card-chip">H3</span>
+            <span class="cs-card-chip">GeoPandas</span>
+            <span class="cs-card-chip">DBSCAN</span>
+          </div>
+          <span class="cs-soon-badge"><i class="fas fa-clock"></i> Coming Soon</span>
         </div>
       </div>
 
