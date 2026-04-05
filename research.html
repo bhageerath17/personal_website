@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research &amp; Publications — Bhageerath Bogi</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .rh-hero {
+      min-height: 32vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: calc(var(--nav-h) + 40px) 24px 48px;
+      position: relative; overflow: hidden;
+    }
+    .rh-hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 0%, rgba(167,139,250,0.13) 0%, transparent 60%);
+    }
+    .rh-hero-content { position: relative; z-index: 1; max-width: 720px; }
+    .rh-back {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.78rem; font-weight: 600; color: var(--muted);
+      letter-spacing: 0.06em; text-transform: uppercase;
+      margin-bottom: 20px; transition: color 0.2s;
+    }
+    .rh-back:hover { color: var(--purple); }
+    .rh-page-title {
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 30%, var(--purple) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; margin-bottom: 12px;
+    }
+    .rh-page-sub { font-size: 0.95rem; color: var(--subtle); max-width: 580px; margin: 0 auto; }
+
+    .rh-stats {
+      display: flex; gap: 32px; justify-content: center;
+      margin-top: 28px; flex-wrap: wrap;
+    }
+    .rh-stat {
+      display: flex; flex-direction: column; align-items: center; gap: 2px;
+    }
+    .rh-stat-num {
+      font-size: 1.6rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--purple), var(--cyan));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .rh-stat-label {
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--muted);
+    }
+
+    @media (max-width: 600px) {
+      .research-card { padding: 20px 18px; }
+      .rh-stats { gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="nav-logo" href="index.html">BB</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#impact">Impact</a></li>
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="index.html#education">Education</a></li>
+        <li><a href="research.html" style="color:#fff">Research</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><a href="index.html#contact" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="rh-hero">
+    <div class="rh-hero-bg"></div>
+    <div class="rh-hero-content">
+      <a href="index.html" class="rh-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+      <h1 class="rh-page-title">Research &amp; Publications</h1>
+      <p class="rh-page-sub">Patents, peer-reviewed publications, and technical papers spanning ML systems, GenAI, automotive emissions engineering, and marketplace optimization.</p>
+      <div class="rh-stats">
+        <div class="rh-stat">
+          <span class="rh-stat-num">2</span>
+          <span class="rh-stat-label">Patents</span>
+        </div>
+        <div class="rh-stat">
+          <span class="rh-stat-num">4</span>
+          <span class="rh-stat-label">Publications</span>
+        </div>
+        <div class="rh-stat">
+          <span class="rh-stat-num">2</span>
+          <span class="rh-stat-label">Awards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="research-page-section">
+    <div class="container">
+
+      <!-- Google Scholar row -->
+      <div class="scholar-row reveal">
+        <p>Full publication record and citation metrics available on Google Scholar.</p>
+        <a href="https://scholar.google.com/citations?user=7bBfoYkAAAAJ&hl=en" target="_blank" rel="noopener">
+          <i class="fas fa-graduation-cap"></i> Google Scholar Profile
+        </a>
+      </div>
+
+      <!-- ────────────────────────────────────────
+           PATENTS
+      ──────────────────────────────────────── -->
+      <div class="research-group">
+        <div class="research-section-label">
+          <h3><i class="fas fa-certificate" style="color:var(--purple);margin-right:8px"></i>Patents</h3>
+          <span class="count-badge">2 granted</span>
+        </div>
+
+        <div class="research-grid">
+
+          <!-- Patent 1 — US10570778B2 -->
+          <div class="research-card patent reveal">
+            <div class="research-card-meta">
+              <span class="research-type-badge patent"><i class="fas fa-certificate"></i> Patent</span>
+              <span class="research-patent-num">US10570778B2</span>
+              <span class="research-year-badge">Granted Feb 25, 2020</span>
+            </div>
+            <div class="research-card-title">
+              Coupling System for Turbocharger and Emission Control Device
+            </div>
+            <div class="research-card-authors">
+              <strong>Bhageerath Bogi</strong>, Daniel Jakobcic, Sami Siddiqui, Rodolfo Palma Sr., Xiankai Song ·
+              Assignee: Ford Global Technologies LLC · Filed: Sep 11, 2017
+            </div>
+            <div class="research-abstract-label">Abstract</div>
+            <div class="research-abstract">
+              Methods and systems are provided for a coupling system of a turbocharger and emissions control device
+              of a vehicle. The coupling system includes chamfered surfaces on one or more flanges of the turbine
+              housing and catalyst housing, reducing the physical distance between the two components. By routing
+              a fastener through angled passages in the chamfered flanges, the design minimizes the gap between
+              the turbocharger exit and the catalyst face — directly reducing thermal losses in the exhaust stream
+              during cold-start conditions. This approach improves the enthalpy delivered to the catalyst at engine
+              start, enabling faster catalyst light-off and supporting compliance with stringent SULEV 30 / Tier 3
+              Bin 30 emissions standards in turbocharged engine platforms.
+            </div>
+            <div class="research-card-footer">
+              <span class="research-chip purple">Thermal Management</span>
+              <span class="research-chip purple">Turbocharger</span>
+              <span class="research-chip purple">Emissions</span>
+              <span class="research-chip purple">CAE</span>
+              <a href="https://patents.google.com/patent/US10570778B2/en" target="_blank" rel="noopener" class="research-link purple">
+                <i class="fas fa-arrow-up-right-from-square"></i> View Patent
+              </a>
+            </div>
+          </div>
+
+          <!-- Patent 2 — POEE / Exhaust Enthalpy Optimization -->
+          <div class="research-card patent reveal">
+            <div class="research-card-meta">
+              <span class="research-type-badge patent"><i class="fas fa-certificate"></i> Patent</span>
+              <span class="research-year-badge">Ford Motor Company</span>
+              <span class="research-award-badge"><i class="fas fa-trophy"></i> Ford Chief Award for Innovation</span>
+            </div>
+            <div class="research-card-title">
+              Process to Optimize Exhaust Enthalpy (POEE) for Cold-Start Emissions Compliance
+            </div>
+            <div class="research-card-authors">
+              <strong>Bhageerath Bogi</strong> et al. · Assignee: Ford Motor Company ·
+              Developed at Altair Product Design Inc. (Client: Ford Motor Company)
+            </div>
+            <div class="research-abstract-label">Summary</div>
+            <div class="research-abstract">
+              Invented and patented an advanced simulation methodology — Process to Optimize Exhaust Enthalpy
+              (POEE) — for modeling the thermal behavior of exhaust hardware components from the exhaust port
+              to the catalyst brick face. The methodology introduces "total sensible enthalpy available at the
+              catalyst face" as a predictive metric for successful catalyst light-off during cold-start conditions
+              in turbocharged engines. This CAE framework was adopted by Ford to assess SULEV 30 / Tier 3 Bin 30
+              compliance across multiple vehicle programs. The work was recognized as a <strong>Top 5 CAE project
+              globally at Ford (2015)</strong> and earned the <strong>Ford Chief Award for Innovation</strong>.
+              The companion publication (SAE 2017-01-0141) documents the full methodology.
+            </div>
+            <div class="research-card-footer">
+              <span class="research-chip purple">SULEV 30</span>
+              <span class="research-chip purple">Cold-Start Emissions</span>
+              <span class="research-chip purple">Thermal Simulation</span>
+              <span class="research-chip purple">POEE Methodology</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ────────────────────────────────────────
+           PUBLICATIONS
+      ──────────────────────────────────────── -->
+      <div class="research-group">
+        <div class="research-section-label">
+          <h3><i class="fas fa-book-open" style="color:var(--cyan);margin-right:8px"></i>Publications</h3>
+          <span class="count-badge">4 papers</span>
+        </div>
+
+        <div class="research-grid">
+
+          <!-- Publication 1 — SAE 2017-01-0141 -->
+          <div class="research-card publication reveal">
+            <div class="research-card-meta">
+              <span class="research-type-badge publication"><i class="fas fa-book-open"></i> Journal Paper</span>
+              <span class="research-journal-badge">SAE International · 2017</span>
+              <span class="research-year-badge">2017-01-0141</span>
+            </div>
+            <div class="research-card-title">
+              Exhaust System Thermal Management: A Process to Optimize Exhaust Enthalpy for Cold Start Emissions Reduction
+            </div>
+            <div class="research-card-authors">
+              Ray Host, Peter Moilanen, Marcus Fried, <strong>Bhageerath Bogi</strong> ·
+              Ford Motor Company · WCX 17: SAE World Congress Experience · Published March 28, 2017
+            </div>
+            <div class="research-abstract-label">Abstract</div>
+            <div class="research-abstract">
+              Future North American emissions standards (Tier 3 Bin 30 / LEVIII SULEV 30) require the exhaust
+              catalyst to exceed 80% conversion efficiency within 20 seconds of engine start. Turbocharged engines
+              face unique challenges as the turbocharger significantly increases heat dissipation in the exhaust
+              system, delaying catalyst light-off. This paper presents a CAE methodology to assess the thermal
+              performance of exhaust hardware components from the exhaust port through to the catalyst brick face,
+              and introduces the concept of "total sensible enthalpy available at the catalyst face" as a predictive
+              metric for successful catalyst light-off during cold-start conditions. The framework enables engineers
+              to evaluate design trade-offs and guide exhaust system architecture decisions that support compliance
+              with next-generation emissions regulations across turbocharged engine platforms.
+            </div>
+            <div class="research-card-footer">
+              <span class="research-chip">Thermal Management</span>
+              <span class="research-chip">Emissions</span>
+              <span class="research-chip">SULEV 30</span>
+              <span class="research-chip">CAE</span>
+              <a href="https://doi.org/10.4271/2017-01-0141" target="_blank" rel="noopener" class="research-link">
+                <i class="fas fa-arrow-up-right-from-square"></i> View Paper
+              </a>
+            </div>
+          </div>
+
+          <!-- Publication 2 — Dynamic Pricing -->
+          <div class="research-card publication reveal">
+            <div class="research-card-meta">
+              <span class="research-type-badge publication"><i class="fas fa-book-open"></i> Journal Paper</span>
+              <span class="research-journal-badge">IJSRCSEIT · 2024</span>
+              <span class="research-year-badge">Vol. 10 · Issue 5</span>
+            </div>
+            <div class="research-card-title">
+              The Role of Dynamic Pricing Models in Increasing Marketplace Profitability
+            </div>
+            <div class="research-card-authors">
+              <strong>Bhageerath Bogi</strong> · International Journal of Scientific Research in Computer Science,
+              Engineering and Information Technology · Sep–Oct 2024 · pp. 988–1002
+            </div>
+            <div class="research-abstract-label">Abstract</div>
+            <div class="research-abstract">
+              This paper examines the theoretical frameworks and real-world applications of dynamic pricing models
+              in digital marketplaces, analyzing how companies leverage real-time market signals to optimize
+              profitability at scale. It explores demand elasticity modeling, competitor price monitoring, and
+              inventory-driven pricing strategies — drawing on production experience with multi-retailer platforms
+              serving millions of SKUs. The paper evaluates gradient-boosted and regression-based elasticity models
+              alongside reinforcement learning approaches, and discusses implementation trade-offs in latency-
+              sensitive pricing pipelines. Key findings highlight the compounding impact of real-time markdown
+              optimization and surge pricing on gross margin, with case evidence of sustained profitability
+              improvements across seasonal demand cycles.
+            </div>
+            <div class="research-card-footer">
+              <span class="research-chip">Dynamic Pricing</span>
+              <span class="research-chip">Demand Elasticity</span>
+              <span class="research-chip">Marketplace ML</span>
+              <span class="research-chip">XGBoost</span>
+              <a href="https://ijsrcseit.com/index.php/home/article/view/CSEIT2410612401" target="_blank" rel="noopener" class="research-link">
+                <i class="fas fa-arrow-up-right-from-square"></i> View Paper
+              </a>
+            </div>
+          </div>
+
+          <!-- Publication 3 — AI Fraud Detection -->
+          <div class="research-card publication reveal">
+            <div class="research-card-meta">
+              <span class="research-type-badge publication"><i class="fas fa-book-open"></i> Journal Paper</span>
+              <span class="research-journal-badge">IJCST · 2024</span>
+              <span class="research-year-badge">Vol. 12 · Issue 6</span>
+            </div>
+            <div class="research-card-title">
+              AI in E-Commerce Fraud Detection: Generative and Predictive Models for Risk Prevention
+            </div>
+            <div class="research-card-authors">
+              <strong>Bhageerath Bogi</strong> · International Journal of Computer Science and Technology ·
+              2024 · Article P10
+            </div>
+            <div class="research-abstract-label">Abstract</div>
+            <div class="research-abstract">
+              This paper examines how AI tools — both generative and predictive — are reshaping fraud detection
+              and risk prevention in digital commerce. It surveys the state of the art in real-time transaction
+              scoring, behavioral anomaly detection, and graph-based risk modeling, drawing on the author's
+              production experience building sub-second fraud scoring systems that have prevented tens of millions
+              of dollars in annual losses. The paper discusses architectural patterns for deploying ensemble and
+              gradient-boosted models in high-throughput inference pipelines, feature engineering from identity
+              graphs and behavioral sequences, and the emerging role of large language models in synthetic fraud
+              pattern generation for training data augmentation. It also addresses model drift detection strategies
+              and the operational challenges of maintaining fraud model performance in adversarial environments.
+            </div>
+            <div class="research-card-footer">
+              <span class="research-chip">Fraud Detection</span>
+              <span class="research-chip">Real-Time Inference</span>
+              <span class="research-chip">GNN</span>
+              <span class="research-chip">XGBoost</span>
+              <span class="research-chip">LLM</span>
+            </div>
+          </div>
+
+          <!-- Publication 4 — Drop-Off Prediction -->
+          <div class="research-card publication reveal">
+            <div class="research-card-meta">
+              <span class="research-type-badge publication"><i class="fas fa-book-open"></i> Technical Paper</span>
+              <span class="research-journal-badge">ResearchGate · 2024</span>
+              <span class="research-year-badge">December 2024</span>
+            </div>
+            <div class="research-card-title">
+              Drop-Off Prediction Models and Route Optimization for Cost-Effective Delivery Operations
+            </div>
+            <div class="research-card-authors">
+              <strong>Bhageerath Bogi</strong> · ResearchGate · Published December 2024
+            </div>
+            <div class="research-abstract-label">Abstract</div>
+            <div class="research-abstract">
+              This paper investigates the integration of drop-off prediction models with route optimization
+              approaches to improve the cost-efficacy of last-mile delivery operations. Drawing on production
+              systems processing 400,000+ packages weekly, it presents a gradient-boosted drop-off prediction
+              model deployed within a mission-critical pay-computation service — achieving an 8% reduction in
+              shopper pay costs through improved flight-plan estimates. The paper explores deep learning
+              architectures and evolutionary algorithms for joint optimization of drop-off probability and
+              route assignment, and evaluates trade-offs between model complexity, inference latency, and
+              operational accuracy under SLA constraints. Results demonstrate that accurate drop-off forecasting,
+              when tightly coupled with real-time route matching, delivers substantial cost savings at scale in
+              gig-economy delivery platforms.
+            </div>
+            <div class="research-card-footer">
+              <span class="research-chip">Route Optimization</span>
+              <span class="research-chip">Drop-Off Prediction</span>
+              <span class="research-chip">MLOps</span>
+              <span class="research-chip">FastAPI</span>
+              <a href="https://www.researchgate.net/publication/387371079_DROP-OFF_PREDICTION_MODELS_AND_ROUTE_OPTIMIZATION_FOR_COST-EFFECTIVE_DELIVERY_OPERATIONS" target="_blank" rel="noopener" class="research-link">
+                <i class="fas fa-arrow-up-right-from-square"></i> View Paper
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Bhageerath Bogi · <a href="index.html" style="color:var(--cyan)">Back to Portfolio</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>
