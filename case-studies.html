@@ -275,7 +275,8 @@
         // deactivate all
         document.querySelectorAll('.cs-card').forEach(c => {
           c.classList.remove('active');
-          c.querySelector('.cs-card-arrow i').className = 'fas fa-chevron-down';
+          const arrowI = c.querySelector('.cs-card-arrow i');
+          if (arrowI) arrowI.className = 'fas fa-chevron-down';
         });
 
         if (isActive) {
